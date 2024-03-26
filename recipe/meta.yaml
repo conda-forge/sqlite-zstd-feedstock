@@ -10,14 +10,8 @@ source:
   sha256: c29d5229dc2d6b7fad677c3115155918d0cb34897554675213f10cac8f1cb266
 
 build:
-  number: 0
-  skip: true  # [not linux] # macos will need >=10.12
-  script:
-    - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
-    - cargo build --release --features build_extension
-    - mkdir -p $PREFIX/lib
-    - find . -name *libsqlite_zstd.so*
-    - cp $(find . -name libsqlite_zstd.so | tail -n 1) $PREFIX/lib
+  number: 1
+  skip: true  # [not unix]
 
 requirements:
   build:
@@ -26,10 +20,11 @@ requirements:
     - cargo-bundle-licenses
   run:
     - sqlite
+    - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default("10.9") }}  # [osx and x86_64]
 
 test:
   commands:
-    - echo '.quit' | sqlite3 -cmd '.load libsqlite_zstd.so'
+    - echo '.quit' | sqlite3 -cmd ".load libsqlite_zstd${SHLIB_EXT}" 2>&1 | grep sqlite_zstd::create_extension
 
 about:
   home: https://github.com/phiresky/sqlite-zstd
