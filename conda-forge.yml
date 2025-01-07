@@ -8,5 +8,5 @@ test: native_and_emulated
 build_platform:
   osx_arm64: osx_64
 provider:
-  linux_ppc64le: default
-  linux_aarch64: default
+  linux_ppc64le: emulated
+  linux_aarch64: emulated

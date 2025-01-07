@@ -19,14 +19,7 @@ Current build status
 ====================
 
 
-<table><tr>
-    <td>Travis</td>
-    <td>
-      <a href="https://app.travis-ci.com/conda-forge/sqlite-zstd-feedstock">
-        <img alt="linux" src="https://img.shields.io/travis/com/conda-forge/sqlite-zstd-feedstock/main.svg?label=Linux">
-      </a>
-    </td>
-  </tr>
+<table>
     
   <tr>
     <td>Azure</td>
@@ -88,6 +81,7 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-sqlite--zstd-green.svg)](https://anaconda.org/conda-forge/sqlite-zstd) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/sqlite-zstd.svg)](https://anaconda.org/conda-forge/sqlite-zstd) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/sqlite-zstd.svg)](https://anaconda.org/conda-forge/sqlite-zstd) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/sqlite-zstd.svg)](https://anaconda.org/conda-forge/sqlite-zstd) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-sqlite--zstd--python-green.svg)](https://anaconda.org/conda-forge/sqlite-zstd-python) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/sqlite-zstd-python.svg)](https://anaconda.org/conda-forge/sqlite-zstd-python) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/sqlite-zstd-python.svg)](https://anaconda.org/conda-forge/sqlite-zstd-python) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/sqlite-zstd-python.svg)](https://anaconda.org/conda-forge/sqlite-zstd-python) |
 
 Installing sqlite-zstd
 ======================
@@ -99,16 +93,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `sqlite-zstd` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `sqlite-zstd, sqlite-zstd-python` can be installed with `conda`:
 
 ```
-conda install sqlite-zstd
+conda install sqlite-zstd sqlite-zstd-python
 ```
 
 or with `mamba`:
 
 ```
-mamba install sqlite-zstd
+mamba install sqlite-zstd sqlite-zstd-python
 ```
 
 It is possible to list all of the versions of `sqlite-zstd` available on your platform with `conda`:
