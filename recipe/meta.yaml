@@ -24,9 +24,9 @@ outputs:
       run:
         - sqlite
 
-      test:
-        commands:
-          - echo '.quit' | sqlite3 -cmd ".load libsqlite_zstd${SHLIB_EXT}" 2>&1 | grep sqlite_zstd::create_extension
+    test:
+      commands:
+        - echo '.quit' | sqlite3 -cmd ".load libsqlite_zstd${SHLIB_EXT}" 2>&1 | grep sqlite_zstd::create_extension
 
   - name: sqlite-zstd-python
     script: build_py.sh
