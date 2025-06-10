@@ -9,7 +9,7 @@ source:
   git_url: https://github.com/phiresky/sqlite-zstd.git
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
 
 requirements:
@@ -42,7 +42,7 @@ outputs:
         - python                                 # [build_platform != target_platform]
         - cross-python_{{ target_platform }}     # [build_platform != target_platform]
       host:
-        - python >=3.9
+        - python
         - pip
         - setuptools >=61.2
         - setuptools-scm >=6.2
