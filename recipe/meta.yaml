@@ -6,14 +6,18 @@ package:
   version: {{ version }}
 
 source:
-  git_url: https://github.com/phiresky/sqlite-zstd.git
+  url: https://github.com/phiresky/sqlite-zstd/archive/refs/tags/v{{ version }}.tar.gz
+  sha256: 86fb7e77b2f5d2d5db43d17a35f9c1d0e1587719dd450bc1fb39e8d58ea48f65
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
 
 requirements:
   build:
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+  host:
     - python
 
 outputs:
@@ -42,14 +46,14 @@ outputs:
         - python                                 # [build_platform != target_platform]
         - cross-python_{{ target_platform }}     # [build_platform != target_platform]
       host:
-        - python >=3.9
+        - python
         - pip
         - setuptools >=61.2
         - setuptools-scm >=6.2
         - setuptools-rust
         - sqlite
       run:
-        - python >=3.9
+        - python
         - sqlite
 
     test:
